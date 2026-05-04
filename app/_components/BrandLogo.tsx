@@ -7,9 +7,10 @@ type Props = {
 };
 
 export function BrandLogo({ className, priority, alt = "" }: Props) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
     <Image
-      src="/logo.png"
+      src={`${basePath}/logo.png`}
       alt={alt}
       width={560}
       height={240}
