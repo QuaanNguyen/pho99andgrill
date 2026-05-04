@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 type Props = {
   className?: string;
   priority?: boolean;
@@ -7,10 +9,9 @@ type Props = {
 };
 
 export function BrandLogo({ className, priority, alt = "" }: Props) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
     <Image
-      src={`${basePath}/logo.png`}
+      src={`${BASE_PATH}/logo.png`}
       alt={alt}
       width={560}
       height={240}
