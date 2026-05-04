@@ -1,0 +1,66 @@
+---
+description: Pho 99 Grill design tokens, palette, typography, and section/header conventions
+globs: **/*.{tsx,css}
+alwaysApply: false
+---
+
+# Design System
+
+## Palette (CSS variables in `app/globals.css`, exposed via Tailwind v4 `@theme inline`)
+
+| Token         | Hex       | Tailwind class    | Use                                      |
+| ------------- | --------- | ----------------- | ---------------------------------------- |
+| `--bg`        | `#F2E8DE` | `bg-bg`           | page background (warm beige)             |
+| `--text`      | `#3C2E22` | `text-text`       | body copy                                |
+| `--link`      | `#7D623F` | `text-link`       | links, secondary text                    |
+| `--accent`    | `#AD473B` | `text-accent`     | red accent (headlines, CTAs)             |
+| `--border`    | `#C39367` | `border-border`   | hairline borders, button outlines        |
+| `--dark`      | `#2A1F17` | `bg-dark`         | dark overlays / footer                   |
+| `--cream`     | `#FAF4EB` | `bg-cream`        | lifted surfaces                          |
+
+## Typography (loaded via `next/font` in `app/layout.tsx`)
+
+- Display: **Cormorant Garamond** (serif) → `font-display` (`var(--font-display)`). Use for headlines.
+- Body: **Inter** (sans) → `font-sans` (`var(--font-sans)`). Use for everything else.
+- Nav links are rendered **lowercase** (`lowercase tracking-wide`).
+
+## Header (Uchi-style)
+
+- Fixed `top-0 left-0 w-full z-50`. **Single** height: **70px mobile / 96px desktop**. Do **not** add a separate "scrolled" / "compact" state — the only motion is the hide/reveal transform.
+- Always opaque on `bg-bg` with `border-b border-border/80`.
+- **Hide on scroll-down**, **reveal on scroll-up** — only one animated property: `transform` between `translate-y-0` and `-translate-y-full`. Threshold: don't hide before ~120px of scroll, ignore scroll deltas under 6px to avoid flicker. Drawer open keeps the bar visible (`openPanel` blocks hide).
+- Logo left, lowercase inline nav center/right (hidden under `lg`), bordered "reservations" CTA far right, hamburger under `lg`.
+
+## Buttons
+
+- **Bordered (primary CTA on header / hero):** `border border-border text-text hover:bg-dark hover:text-bg transition-colors px-6 py-2 lowercase tracking-wide`.
+- **Underline link CTA (sections):** `underline underline-offset-4 hover:no-underline lowercase tracking-wide text-bg`.
+
+## Sections (Avalaun-style full-bleed scroll)
+
+Full-bleed sections scroll **normally** (no sticky stack). Each is its own `min-h-screen` panel; sections are visually separated by a [`SectionBreak`](app/_components/SectionBreak.tsx) breaker on the `bg-bg` warm-beige strip.
+
+The image inside each section gets a **JS-driven parallax** via [`ParallaxImage`](app/_components/ParallaxImage.tsx) — a single `requestAnimationFrame`-throttled scroll handler measures the **section's** `getBoundingClientRect` (not the wrapper's, to avoid feedback from its own transform) and translates the image wrapper opposite to the scroll direction at `intensity` (default `0.35`). Respects `prefers-reduced-motion: reduce`. Works in every browser — don't reach for `animation-timeline: view()` (Safari/Firefox don't support it yet).
+
+Rules:
+
+- Each `<Section>` outer is `relative isolate flex min-h-screen w-full items-center overflow-hidden`. Normal flow — no `position: sticky`, no `h-screen`.
+- The image wrapper inside `ParallaxImage` is `absolute inset-x-0 -top-[30%] h-[160%]` so the ±~30vh parallax translate never exposes seams. Don't shrink this without lowering `intensity`.
+- Sections are direct siblings under `<main>`; place a `<SectionBreak label="..." />` between adjacent sections in [`app/page.tsx`](app/page.tsx).
+- Don't add `overflow: hidden` on `html` / `body` — it kills `getBoundingClientRect`-based scroll math when the body is the scroller.
+
+Markup of a single section (handled by [`Section`](app/_components/sections/Section.tsx)):
+
+```tsx
+<section className="relative isolate flex min-h-screen w-full items-center overflow-hidden text-bg">
+  <ParallaxImage src={...} alt="" />
+  <div className="absolute inset-0 -z-10 bg-dark/55" />
+  <div className="mx-auto w-full max-w-3xl px-6 text-center">
+    <h2 className="font-display text-5xl md:text-7xl">...</h2>
+  </div>
+</section>
+```
+
+## Easing
+
+Use `cubic-bezier(0.355, 0.820, 0.335, 1)` for header / nav transitions (matches the Uchi reference). Available as `ease-uchi` via custom Tailwind utility.

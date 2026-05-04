@@ -1,0 +1,35 @@
+---
+description: Pho 99 Grill project overview, stack, and brand
+alwaysApply: true
+---
+
+# Pho 99 Grill — Project Overview
+
+Marketing landing page for **Pho 99 Grill**, a Vietnamese pho + grill restaurant.
+
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4 (CSS-first config via `@theme inline` in `app/globals.css`)
+- ESLint (`eslint-config-next`)
+- `next/font` for Google Fonts; `next/image` for images
+- Turbopack dev/build
+
+## Brand
+
+- Name: **Pho 99 Grill** (display the wordmark as `phở 99` lowercase, accent on "phở")
+- Tone: warm, family-run, ingredient-driven; "slow-simmered phở and flame-grilled Vietnamese classics"
+- Copy is placeholder until the owner provides the real menu/hours/location — keep it editable in one obvious spot per section.
+
+## Design references (do NOT ship)
+
+- `Inspo/` contains saved HTML of two reference sites for visual inspiration only. It is in `.gitignore` and must never be imported, copied verbatim, or referenced from runtime code.
+  - Cafe Avalaun → reference for **landing page section structure** (stacked full-bleed scroll sections).
+  - Uchi → reference for the **header / nav** (fixed, scroll-aware, lowercase, slide-out drawer) and the warm beige palette.
+
+## Layout conventions
+
+- Components live in `app/_components/` (underscore prefix keeps them out of the route tree).
+- Section components live in `app/_components/sections/`.
+- Hooks live in `app/_lib/`.
+- Path alias `@/*` maps to the project root.

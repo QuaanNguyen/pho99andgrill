@@ -1,0 +1,34 @@
+---
+description: React/Next.js component conventions for Pho 99 Grill
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# Component Conventions
+
+## Server vs client
+
+- Default to **server components**. Add `"use client"` only when you need browser APIs (scroll, refs, `useState`, event handlers on interactive elements like the side-nav).
+- Currently client-only: `Header`, `SideNav`, `Newsletter` (form handler).
+
+## File layout
+
+- Components: `app/_components/<Name>.tsx`
+- Section components: `app/_components/sections/<Name>.tsx`
+- Hooks: `app/_lib/<useThing>.ts`
+- One default-exported component per file; PascalCase filename matches export.
+
+## Conventions
+
+- Use `next/image` for any image (never `<img>`); `next/link` for internal nav.
+- Use Tailwind utility classes — no CSS modules unless tokens cannot express it.
+- Reach for design tokens (`bg-bg`, `text-accent`, etc.) instead of raw hex values.
+- Prefer `clsx`-style template literals only when conditionally toggling classes; otherwise plain strings.
+- Do **not** add narrating comments (e.g. `// render hero`). Comments only for non-obvious intent.
+- Keep section components self-contained — pass no props from `page.tsx`; they own their own copy and image URL.
+
+## Accessibility
+
+- Header nav buttons that open the side drawer must use `aria-controls`, `aria-expanded`, and visible focus rings.
+- Decorative images: `alt=""`. Content images: meaningful `alt`.
+- The mobile hamburger needs an `aria-label` and a screen-reader-only label.
