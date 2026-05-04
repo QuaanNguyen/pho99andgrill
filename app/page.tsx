@@ -12,15 +12,30 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <SectionBreak label="our story" />
+      <SectionBreak
+        label="Welcome"
+        caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
       <Story />
-      <SectionBreak label="the signature bowl" />
+      <SectionBreak
+        label="the signature bowl"
+        caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
       <Signature />
-      <SectionBreak label="fresh, daily" />
+      <SectionBreak
+        label="fresh, daily"
+        caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
       <Fresh />
-      <SectionBreak label="catering + events" />
+      <SectionBreak
+        label="catering + events"
+        caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
       <Events />
-      <SectionBreak label="join the team" />
+      <SectionBreak
+        label="join the team"
+        caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
       <JoinTeam />
       <Newsletter />
       <Footer />

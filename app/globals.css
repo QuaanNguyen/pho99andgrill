@@ -26,6 +26,14 @@
   --ease-uchi: cubic-bezier(0.355, 0.82, 0.335, 1);
 }
 
+html {
+  font-size: 112.5%;
+  /* clip (not hidden) — prevents accidental horizontal overflow without making
+     html/body a scroll container, so the body remains the window scroller and
+     ParallaxImage's getBoundingClientRect math keeps working. */
+  overflow-x: clip;
+}
+
 html,
 body {
   background-color: var(--bg);

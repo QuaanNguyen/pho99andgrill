@@ -12,7 +12,7 @@ export function Newsletter() {
       className="relative flex min-h-[70vh] w-full items-center bg-cream py-24"
     >
       <div className="mx-auto w-full max-w-2xl px-6 text-center">
-        <p className="mb-6 text-[11px] uppercase tracking-[0.4em] text-link">
+        <p className="mb-6 text-[15px] uppercase tracking-[0.4em] text-link">
           stay in the bowl
         </p>
         <h2 className="font-display text-4xl leading-tight text-text md:text-6xl">
@@ -49,7 +49,7 @@ export function Newsletter() {
             />
             <button
               type="submit"
-              className="border border-border bg-text px-6 py-3 text-sm lowercase tracking-wide text-bg transition-colors duration-300 hover:bg-accent hover:border-accent [transition-timing-function:var(--ease-uchi)]"
+              className="rounded-none border border-border bg-text px-6 py-3 text-sm lowercase tracking-wide text-bg transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent"
             >
               subscribe
             </button>

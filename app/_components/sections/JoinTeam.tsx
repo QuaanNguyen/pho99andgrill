@@ -5,6 +5,7 @@ export function JoinTeam() {
     <Section
       id="team"
       eyebrow="join the team"
+      eyebrowClassName="text-xs md:text-sm"
       title="we're hiring cooks, hosts, and grill leads."
       description="If you love taking care of people, working with your hands, and learning something every shift — there's a spot for you on the line. Tell us a little about yourself and let's grab a bowl together."
       image="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=2400&q=80"

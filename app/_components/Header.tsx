@@ -23,14 +23,14 @@ export function Header() {
       <div className="mx-auto flex h-[70px] max-w-[1440px] items-center justify-between px-5 md:h-[96px] md:px-10">
         <Link
           href="/"
-          aria-label="Pho 99 Grill — home"
+          aria-label="Pho 99 & Grill — home"
           className="font-display leading-none"
         >
           <span className="block text-3xl tracking-tight text-text md:text-4xl">
             phở<span className="ml-1 text-accent">99</span>
           </span>
-          <span className="mt-1 hidden text-[11px] uppercase tracking-[0.32em] text-link md:block">
-            grill
+          <span className="mt-1 hidden text-[15px] uppercase tracking-[0.32em] text-link md:block">
+            &amp; grill
           </span>
         </Link>
 
@@ -44,7 +44,7 @@ export function Header() {
                 aria-expanded={openPanel === "menus"}
                 className="hover:text-accent transition-colors"
               >
-                locations + menus
+                menu
               </button>
             </li>
             <li>
@@ -54,7 +54,7 @@ export function Header() {
             </li>
             <li>
               <Link href="#newsletter" className="hover:text-accent transition-colors">
-                gift cards
+                promotions
               </Link>
             </li>
             <li>
@@ -72,12 +72,12 @@ export function Header() {
 
           <button
             type="button"
-            onClick={() => open("reservations")}
+            onClick={() => open("contact")}
             aria-controls="side-nav"
-            aria-expanded={openPanel === "reservations"}
-            className="border border-border px-6 py-2 text-sm lowercase tracking-wide text-text transition-colors duration-300 hover:bg-dark hover:text-bg [transition-timing-function:var(--ease-uchi)]"
+            aria-expanded={openPanel === "contact"}
+            className="rounded-none border border-border px-6 py-2 text-sm lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
           >
-            reservations
+            contact us
           </button>
         </nav>
 

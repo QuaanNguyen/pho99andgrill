@@ -5,6 +5,7 @@ export function Signature() {
     <Section
       id="signature"
       eyebrow="the signature bowl"
+      eyebrowClassName="text-xs md:text-sm"
       title={
         <>
           <span className="italic">phở đặc biệt</span>

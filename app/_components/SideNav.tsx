@@ -11,8 +11,8 @@ type Section = {
 
 const SECTIONS: Section[] = [
   {
-    id: "reservations",
-    label: "reservations",
+    id: "contact",
+    label: "contact",
     body: (
       <div className="space-y-4 text-sm text-text/80">
         <p>
@@ -21,7 +21,7 @@ const SECTIONS: Section[] = [
         </p>
         <a
           href="#"
-          className="inline-block border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 hover:bg-dark hover:text-bg [transition-timing-function:var(--ease-uchi)]"
+          className="inline-block rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
         >
           book a table
         </a>
@@ -43,13 +43,13 @@ const SECTIONS: Section[] = [
         <div className="flex flex-col gap-3">
           <a
             href="#"
-            className="border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 hover:bg-dark hover:text-bg [transition-timing-function:var(--ease-uchi)]"
+            className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
           >
             order pickup
           </a>
           <a
             href="#"
-            className="border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 hover:bg-dark hover:text-bg [transition-timing-function:var(--ease-uchi)]"
+            className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
           >
             order delivery
           </a>
@@ -125,7 +125,7 @@ export function SideNav() {
           </button>
         </div>
 
-        <nav aria-label="Drawer" className="flex h-[calc(100%-70px)] flex-col overflow-y-auto px-6 py-6 md:h-[calc(100%-115px)]">
+        <nav aria-label="Drawer" className="flex h-[calc(100%-70px)] flex-col overflow-y-auto px-6 py-3 md:h-[calc(100%-115px)] md:py-6">
           {SECTIONS.map((section) => {
             const isOpen = expanded === section.id;
             return (
@@ -135,7 +135,7 @@ export function SideNav() {
                   onClick={() => setActive(isOpen ? null : section.id)}
                   aria-expanded={isOpen}
                   aria-controls={`panel-${section.id}`}
-                  className="flex w-full items-center justify-between py-5 text-left font-display text-3xl text-text transition-colors hover:text-accent"
+                  className="flex w-full items-center justify-between py-3 text-left font-display text-2xl text-text transition-colors hover:text-accent md:py-5 md:text-3xl"
                 >
                   <span className="lowercase">{section.label}</span>
                   <span
@@ -152,7 +152,7 @@ export function SideNav() {
                 <div
                   id={`panel-${section.id}`}
                   hidden={!isOpen}
-                  className="pb-6"
+                  className="pb-4 md:pb-6"
                 >
                   {section.body}
                 </div>
@@ -160,8 +160,8 @@ export function SideNav() {
             );
           })}
 
-          <p className="mt-auto pt-8 text-xs lowercase tracking-[0.25em] text-link">
-            phở 99 grill — est. 2024
+          <p className="mt-auto pt-4 text-[11px] lowercase tracking-[0.25em] text-link md:pt-8 md:text-xs">
+            phở 99 &amp; grill — est. 2026
           </p>
         </nav>
       </aside>

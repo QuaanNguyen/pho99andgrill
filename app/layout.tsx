@@ -17,9 +17,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Pho 99 Grill — Slow-simmered phở and flame-grilled Vietnamese classics",
+  title: "Pho 99 & Grill",
   description:
-    "Pho 99 Grill is a family-run Vietnamese kitchen serving 24-hour broth phở, flame-grilled meats, and fresh herb-forward classics.",
+    "Pho 99 & Grill is a family-run Vietnamese kitchen in Cypress, TX, cooking the same phở and grilled meats our chef served for over a decade in Saigon.",
 };
 
 export default function RootLayout({

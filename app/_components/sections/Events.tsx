@@ -5,6 +5,7 @@ export function Events() {
     <Section
       id="events"
       eyebrow="catering + events"
+      eyebrowClassName="text-xs md:text-sm"
       title="dinner for ten — or a hundred."
       description="From a phở bar in your backyard to a full grill spread for the office, we cater up and down the city. Private buyouts of the dining room are available Sunday and Monday evenings."
       image="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=2400&q=80"

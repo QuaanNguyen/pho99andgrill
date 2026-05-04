@@ -3,6 +3,7 @@ import { ParallaxImage } from "../ParallaxImage";
 type SectionProps = {
   id?: string;
   eyebrow?: string;
+  eyebrowClassName?: string;
   title: React.ReactNode;
   description?: React.ReactNode;
   image: string;
@@ -16,6 +17,7 @@ type SectionProps = {
 export function Section({
   id,
   eyebrow,
+  eyebrowClassName,
   title,
   description,
   image,
@@ -40,7 +42,12 @@ export function Section({
         ].join(" ")}
       >
         {eyebrow ? (
-          <p className="mb-6 text-[11px] uppercase tracking-[0.4em] text-bg/80">
+          <p
+            className={[
+              "mb-6 uppercase tracking-[0.4em] text-bg/80",
+              eyebrowClassName ?? "text-[11px]",
+            ].join(" ")}
+          >
             {eyebrow}
           </p>
         ) : null}
@@ -77,7 +84,7 @@ export function SectionLink({
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-2 border-b border-bg/70 pb-1 transition-colors duration-300 hover:border-accent hover:text-accent [transition-timing-function:var(--ease-uchi)]"
+      className="inline-flex items-center gap-2 rounded-none border border-bg/70 bg-transparent px-6 py-2 transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
     >
       {children}
       <span aria-hidden="true">→</span>
