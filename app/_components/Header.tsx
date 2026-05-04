@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { BrandLogo } from "@/app/_components/BrandLogo";
 import { useNav } from "@/app/_lib/nav-context";
 import { useScrollDirection } from "@/app/_lib/useScrollDirection";
 
@@ -24,28 +25,20 @@ export function Header() {
         <Link
           href="/"
           aria-label="Pho 99 & Grill — home"
-          className="font-display leading-none"
+          className="-ml-1 block shrink-0"
         >
-          <span className="block text-3xl tracking-tight text-text md:text-4xl">
-            phở<span className="ml-1 text-accent">99</span>
-          </span>
-          <span className="mt-1 hidden text-[15px] uppercase tracking-[0.32em] text-link md:block">
-            &amp; grill
-          </span>
+          <BrandLogo
+            priority
+            className="h-[52px] w-auto md:h-[68px]"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
           <ul className="flex items-center gap-8 text-sm lowercase tracking-wide text-text">
             <li>
-              <button
-                type="button"
-                onClick={() => open("menus")}
-                aria-controls="side-nav"
-                aria-expanded={openPanel === "menus"}
-                className="hover:text-accent transition-colors"
-              >
+              <Link href="/menu" className="hover:text-accent transition-colors">
                 menu
-              </button>
+              </Link>
             </li>
             <li>
               <Link href="#events" className="hover:text-accent transition-colors">
@@ -83,7 +76,7 @@ export function Header() {
 
         <button
           type="button"
-          onClick={() => open("menus")}
+          onClick={() => open("contact")}
           aria-controls="side-nav"
           aria-expanded={openPanel !== null}
           aria-label="open menu"

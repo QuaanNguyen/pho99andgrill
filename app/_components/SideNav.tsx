@@ -16,18 +16,12 @@ const SECTIONS: Section[] = [
     body: (
       <div className="space-y-4 text-sm text-text/80">
         <p>
-          Reservations open 30 days out. Walk-ins welcome at the bar, and we hold a few
-          counter seats for same-day tries.
+          <a href="tel:+13614273744" className="hover:text-accent">
+            (361) 427-3744
+          </a>
         </p>
-        <a
-          href="#"
-          className="inline-block rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
-        >
-          book a table
-        </a>
-        <p className="text-xs text-link">
-          Parties of 7+ — please email{" "}
-          <a className="underline" href="mailto:hello@pho99grill.com">
+        <p>
+          <a href="mailto:hello@pho99grill.com" className="hover:text-accent">
             hello@pho99grill.com
           </a>
         </p>
@@ -38,46 +32,71 @@ const SECTIONS: Section[] = [
     id: "order",
     label: "order online",
     body: (
-      <div className="space-y-4 text-sm text-text/80">
-        <p>Pickup ready in about 20 minutes. Delivery via our partners.</p>
-        <div className="flex flex-col gap-3">
-          <a
-            href="#"
-            className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
-          >
-            order pickup
+      <div className="flex flex-col gap-3 text-sm text-text/80">
+        <a
+          href="#"
+          className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
+        >
+          order pickup
+        </a>
+        <a
+          href="#"
+          className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
+        >
+          order delivery
+        </a>
+      </div>
+    ),
+  },
+  {
+    id: "locations",
+    label: "locations",
+    body: (
+      <div className="space-y-5 text-sm text-text/80">
+        <address className="not-italic leading-relaxed">
+          6073 Highway 6 N
+          <br />
+          Houston, TX 77084
+        </address>
+        <p>
+          <a href="tel:+13614273744" className="hover:text-accent">
+            (361) 427-3744
           </a>
-          <a
-            href="#"
-            className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
-          >
-            order delivery
-          </a>
+        </p>
+        <div>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-link">
+            hours
+          </p>
+          <ul className="mt-2 space-y-1">
+            <li>mon – fri · 9:30a – 8:30p</li>
+            <li>sat · 9:30a – 8:30p</li>
+            <li>sun · 9:30a – 8:30p</li>
+          </ul>
         </div>
       </div>
     ),
   },
   {
-    id: "menus",
-    label: "locations + menus",
+    id: "social",
+    label: "social media",
     body: (
-      <ul className="divide-y divide-border/40">
+      <div className="flex flex-col gap-3 text-sm text-text/80">
         {[
-          { city: "downtown", href: "#" },
-          { city: "eastside", href: "#" },
-          { city: "north suburb", href: "#" },
-        ].map((loc) => (
-          <li key={loc.city} className="flex items-baseline justify-between py-4">
-            <span className="font-display text-2xl text-text">{loc.city}</span>
-            <a
-              href={loc.href}
-              className="text-xs lowercase tracking-[0.25em] text-link underline-offset-4 hover:underline"
-            >
-              menu
-            </a>
-          </li>
+          { label: "instagram", href: "https://instagram.com/pho99grill" },
+          { label: "facebook", href: "https://facebook.com/pho99grill" },
+          { label: "tiktok", href: "https://tiktok.com/@pho99grill" },
+        ].map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
+          >
+            {link.label}
+          </a>
         ))}
-      </ul>
+      </div>
     ),
   },
 ];

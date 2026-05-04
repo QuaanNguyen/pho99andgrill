@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-export type NavPanel = "contact" | "menus" | "order" | null;
+export type NavPanel = "contact" | "order" | "locations" | "social" | null;
 
 type NavContextValue = {
   openPanel: NavPanel;

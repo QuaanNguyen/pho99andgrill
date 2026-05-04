@@ -16,6 +16,7 @@
 # next.js
 /.next/
 /out/
+/.turbo/
 
 # production
 /build
@@ -46,6 +47,7 @@ next-env.d.ts
 .idea/
 *.swp
 *.swo
+*.code-workspace
 
 # OS
 .DS_Store

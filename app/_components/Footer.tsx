@@ -1,15 +1,14 @@
+import { BrandLogo } from "@/app/_components/BrandLogo";
+
 export function Footer() {
   return (
     <footer className="bg-dark text-bg/80">
       <div className="mx-auto grid max-w-[1440px] gap-12 px-6 py-20 md:grid-cols-4 md:px-10">
         <div className="md:col-span-2">
-          <p className="font-display text-4xl text-bg">
-            phở<span className="ml-1 text-accent">99</span>{" "}
-            <span className="text-2xl tracking-[0.3em] text-bg/60">&amp; grill</span>
-          </p>
+          <BrandLogo alt="Pho 99 & Grill" className="h-[72px] w-auto md:h-[84px]" />
           <p className="mt-6 max-w-md text-sm leading-relaxed text-bg/70">
             From Saigon to Cypress — the recipes our family cooked in Vietnam,
-            now poured and grilled the way they're supposed to taste.
+            now poured and grilled the way they&apos;re supposed to taste.
           </p>
         </div>
 
