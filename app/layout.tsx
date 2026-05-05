@@ -16,10 +16,19 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+function tabIconDataUrl(): string {
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#AD473B"/></svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 export const metadata: Metadata = {
   title: "Pho 99 & Grill",
   description:
     "Pho 99 & Grill is a family-run Vietnamese kitchen in Cypress, TX, cooking the same phở and grilled meats our chef served for over a decade in Saigon.",
+  icons: {
+    icon: [{ url: tabIconDataUrl(), type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

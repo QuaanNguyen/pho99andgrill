@@ -1,3 +1,4 @@
+import { withHref } from "@/app/_lib/base-path";
 import { ParallaxImage } from "../ParallaxImage";
 
 type SectionProps = {
@@ -83,7 +84,7 @@ export function SectionLink({
 }) {
   return (
     <a
-      href={href}
+      href={withHref(href)}
       className="inline-flex items-center gap-2 rounded-none border border-bg/70 bg-transparent px-6 py-2 transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
     >
       {children}

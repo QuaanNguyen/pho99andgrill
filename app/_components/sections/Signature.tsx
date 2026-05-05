@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { withAssetPath } from "@/app/_lib/base-path";
 import { SectionLink } from "./Section";
 
 type Slide = {
@@ -14,7 +15,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/food/pho-dac-biet.jpg",
+    src: withAssetPath("/food/pho-dac-biet.jpg"),
     alt: "Close-up of a special bowl of pho with multiple toppings",
     eyebrow: "the signature bowl",
     title: <span className="italic">phở đặc biệt</span>,
@@ -22,7 +23,7 @@ const slides: Slide[] = [
       "Our house bowl: 24-hour broth, hand-pulled rice noodles, brisket, rare eye of round, tendon, and meatball, finished tableside with thai basil, lime, and a charred chili nuoc cham. The dish we open the kitchen for every morning.",
   },
   {
-    src: "/food/bo-ne-dac-biet.jpg",
+    src: withAssetPath("/food/bo-ne-dac-biet.jpg"),
     alt: "Sizzling cast-iron plate of bò né with steak, egg, and pâté",
     eyebrow: "from the grill",
     title: <span className="italic">bò né đặc biệt</span>,
@@ -30,7 +31,7 @@ const slides: Slide[] = [
       "[placeholder] Sizzling cast-iron plate: garlic-marinated steak, runny egg, house pâté, jambon, and a meatball, served with toasted baguette to scoop every last drop.",
   },
   {
-    src: "/food/com_chien.jpg",
+    src: withAssetPath("/food/com-chien.jpg"),
     alt: "Plate of Vietnamese fried rice",
     eyebrow: "from the wok",
     title: <span className="italic">cơm chiên</span>,
