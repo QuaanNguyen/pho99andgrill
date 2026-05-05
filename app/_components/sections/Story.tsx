@@ -12,7 +12,7 @@ export function Story() {
       imageAlt="Warm restaurant kitchen with chefs working"
       overlay="bg-dark/65"
     >
-      <SectionLink href="#story">read our story</SectionLink>
+      <SectionLink href="/about">read our story</SectionLink>
     </Section>
   );
 }

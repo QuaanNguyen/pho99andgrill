@@ -1,7 +1,7 @@
 import { Section, SectionLink } from "./Section";
 
-const HOURS_LAST_UPDATED = "May 3, 2026";
-const HOURS_LAST_UPDATED_ISO = "2026-05-03";
+const HOURS_LAST_UPDATED = "May 5, 2026";
+const HOURS_LAST_UPDATED_ISO = "2026-05-05";
 
 export function Hero() {
   return (
@@ -26,11 +26,17 @@ export function Hero() {
               )
             </span>
           </p>
-          <p>
-            <span className="inline-block rounded-none bg-accent px-1.5 py-0.5 text-bg leading-snug">
-              Open daily, 9:30 AM–8:30 PM.
+          <div className="flex flex-col items-center gap-1 text-center">
+            <span className="inline-block w-fit rounded-none bg-accent px-1.5 py-0.5 text-bg leading-snug">
+              Mon–Tue 10:00 AM–9:00 PM.
             </span>
-          </p>
+            <span className="inline-block w-fit rounded-none bg-accent px-1.5 py-0.5 text-bg leading-snug">
+              Wed closed.
+            </span>
+            <span className="inline-block w-fit rounded-none bg-accent px-1.5 py-0.5 text-bg leading-snug">
+              Thu–Sun 10:00 AM–9:00 PM.
+            </span>
+          </div>
           <p>
             Early closures and private events are announced online in advance.
           </p>
@@ -40,8 +46,7 @@ export function Hero() {
       imageAlt="A steaming bowl of Vietnamese pho with herbs and lime"
       priority
     >
-      <SectionLink href="#signature">view menu</SectionLink>
-      <SectionLink href="#order">order online</SectionLink>
+      <SectionLink href="/menu">view menu</SectionLink>
     </Section>
   );
 }

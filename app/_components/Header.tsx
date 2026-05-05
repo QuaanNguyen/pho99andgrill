@@ -21,11 +21,11 @@ export function Header() {
         data-[hidden=true]:-translate-y-full data-[hidden=false]:translate-y-0
       "
     >
-      <div className="mx-auto flex h-[70px] max-w-[1440px] items-center justify-between px-5 md:h-[96px] md:px-10">
+      <div className="flex h-[70px] w-full min-w-0 items-center justify-between px-6 md:h-[96px] md:px-10 lg:px-12 xl:px-16">
         <Link
           href="/"
           aria-label="Pho 99 & Grill — home"
-          className="-ml-1 block shrink-0"
+          className="block shrink-0"
         >
           <BrandLogo
             priority
@@ -36,30 +36,19 @@ export function Header() {
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
           <ul className="flex items-center gap-8 text-sm lowercase tracking-wide text-text">
             <li>
+              <Link href="/" className="hover:text-accent transition-colors">
+                home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-accent transition-colors">
+                about us
+              </Link>
+            </li>
+            <li>
               <Link href="/menu" className="hover:text-accent transition-colors">
                 menu
               </Link>
-            </li>
-            <li>
-              <Link href="#events" className="hover:text-accent transition-colors">
-                catering + events
-              </Link>
-            </li>
-            <li>
-              <Link href="#newsletter" className="hover:text-accent transition-colors">
-                promotions
-              </Link>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={() => open("order")}
-                aria-controls="side-nav"
-                aria-expanded={openPanel === "order"}
-                className="hover:text-accent transition-colors"
-              >
-                order online
-              </button>
             </li>
           </ul>
 

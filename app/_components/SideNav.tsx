@@ -29,28 +29,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    id: "order",
-    label: "order online",
-    body: (
-      <div className="flex flex-col gap-3 text-sm text-text/80">
-        <a
-          href="#"
-          className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
-        >
-          order pickup
-        </a>
-        <a
-          href="#"
-          className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
-        >
-          order delivery
-        </a>
-      </div>
-    ),
-  },
-  {
     id: "locations",
-    label: "locations",
+    label: "locations & hours",
     body: (
       <div className="space-y-5 text-sm text-text/80">
         <address className="not-italic leading-relaxed">
@@ -68,9 +48,9 @@ const SECTIONS: Section[] = [
             hours
           </p>
           <ul className="mt-2 space-y-1">
-            <li>mon – fri · 9:30a – 8:30p</li>
-            <li>sat · 9:30a – 8:30p</li>
-            <li>sun · 9:30a – 8:30p</li>
+            <li>mon – tue · 10a – 9p</li>
+            <li>wed · closed</li>
+            <li>thu – sun · 10a – 9p</li>
           </ul>
         </div>
       </div>
@@ -81,21 +61,14 @@ const SECTIONS: Section[] = [
     label: "social media",
     body: (
       <div className="flex flex-col gap-3 text-sm text-text/80">
-        {[
-          { label: "instagram", href: "https://instagram.com/pho99grill" },
-          { label: "facebook", href: "https://facebook.com/pho99grill" },
-          { label: "tiktok", href: "https://tiktok.com/@pho99grill" },
-        ].map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
-          >
-            {link.label}
-          </a>
-        ))}
+        <a
+          href="https://www.facebook.com/profile.php?id=61572076649842"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="rounded-none border border-border px-5 py-2 lowercase tracking-wide text-text transition-colors duration-300 [transition-timing-function:var(--ease-uchi)] hover:border-accent hover:bg-accent hover:text-bg"
+        >
+          facebook
+        </a>
       </div>
     ),
   },
@@ -132,11 +105,11 @@ export function SideNav() {
         ].join(" ")}
       >
         <div className="flex h-[70px] items-center justify-between border-b border-border/40 px-6 md:h-[115px]">
-          <span className="font-display text-2xl text-text">menu</span>
+          <span className="font-display text-2xl text-text">Pho 99 & Grill</span>
           <button
             type="button"
             onClick={close}
-            aria-label="close menu"
+            aria-label="close Pho 99 & Grill"
             className="inline-flex h-10 w-10 items-center justify-center text-2xl text-text"
           >
             <span className="sr-only">close</span>
